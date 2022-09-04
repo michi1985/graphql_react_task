@@ -1,0 +1,21 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  host: db
+  username: root
+  password: password
+
+development:
+  <<: *default
+  database: graphql_react_task_development
+
+test:
+  <<: *default
+  database: graphql_react_task_test
+
+production:
+  <<: *default
+  database: graphql_react_task_production
+  username: graphql_react_task
+  password: <%= ENV["GRAPHQL_REACT_TASK_DATABASE_PASSWORD"] %>
