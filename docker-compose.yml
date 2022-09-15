@@ -22,5 +22,7 @@ services:
       - "3000:3000"
     volumes:
       - .:/graphql_react_task
+      - bundle:/usr/local/bundle
 volumes:
   psgl_data:
+  bundle:
