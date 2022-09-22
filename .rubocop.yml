@@ -7,6 +7,7 @@ Rails:
   Enable: true
 
 # 自動生成等チェック不要なものを除外
+# Rubocop拡張のサジェストはOFFにする
 AllCops:
   Exclude:
     - 'bin/**/*'
@@ -23,6 +24,7 @@ AllCops:
     - 'public/packs/**/*'
     - '.git/**/*'
     - 'scripts/tmp/**/*'
+  SuggestExtensions: false
 
 # 日本語のコメントを許可する
 Style/AsciiComments:
@@ -47,3 +49,25 @@ Rails/UnknownEnv:
     - staging
     - development
     - test
+
+# Hashの形式は指定しない
+HashSyntax:
+  Enabled: false
+
+# メソッドの引数の文字数は1文字でも良いことにする
+Naming/MethodParameterName:
+  MinNameLength: 1
+
+Style/FrozenStringLiteralComment:
+  Exclude:
+    - 'Gemfile'
+    - 'Rakefile'
+    - 'config.ru'
+
+# メソッドの行数指定
+Metrics/MethodLength:
+  Max: 20
+
+# 1行の文字数指定
+Layout/LineLength:
+  Max: 130
