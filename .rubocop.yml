@@ -1,0 +1,49 @@
+require:
+  - rubocop-performance
+  - rubocop-rails
+  - rubocop-rspec
+
+Rails:
+  Enable: true
+
+# 自動生成等チェック不要なものを除外
+AllCops:
+  Exclude:
+    - 'bin/**/*'
+    - 'db/migrate/**/*'
+    - 'db/fixtures/**/*'
+    - 'db/schema.rb'
+    - 'config/**/*'
+    - 'vendor/**/*'
+    - 'node_modules/**/*'
+    - 'misc/**/*'
+    - 'storage/**/*'
+    - 'tmp/**/*'
+    - 'log/**/*'
+    - 'public/packs/**/*'
+    - '.git/**/*'
+    - 'scripts/tmp/**/*'
+
+# 日本語のコメントを許可する
+Style/AsciiComments:
+  Enabled: false
+
+# クラス内のクラス定義形式は指定しない
+Style/ClassAndModuleChildren:
+  Enabled: false
+
+# ドキュメントの無い public class を許可する
+Style/Documentation:
+  Enabled: false
+
+# 空のメソッド定義の形式は指定しない
+Style/EmptyMethod:
+  Enabled: false
+
+# staging環境の設定を追加するために指定
+Rails/UnknownEnv:
+  Environments:
+    - production
+    - staging
+    - development
+    - test
