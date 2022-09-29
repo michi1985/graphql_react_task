@@ -10,7 +10,7 @@ docker-compose run web rails new . --force --no-deps --database=postgresql
 
 ## Graphql導入は下記の記事を参考
 
-https://zenn.dev/slowhand/articles/4fe99377185100
+[Rails + GraphQLでAPI作成](https://zenn.dev/slowhand/articles/4fe99377185100)
 
 ## 起動コマンド
 ```
