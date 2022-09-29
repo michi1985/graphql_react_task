@@ -21,3 +21,13 @@ docker compose up
 ```
 docker compose run web bundle install
 ```
+
+## rubocop
+```
+docker compose run web rubocop
+```
+
+## Rspec
+```
+docker compose run web bin/rspec
+```
