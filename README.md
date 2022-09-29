@@ -8,6 +8,10 @@ docker-compose run web rails new . --force --no-deps --database=postgresql
 
 [Rails6 + PostgresのDocker開発環境を構築](https://qiita.com/d0ne1s/items/f724a08119bad2973e46)
 
+## Graphql導入は下記の記事を参考
+
+https://zenn.dev/slowhand/articles/4fe99377185100
+
 ## 起動コマンド
 ```
 docker compose up
