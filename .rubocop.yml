@@ -1,0 +1,73 @@
+require:
+  - rubocop-performance
+  - rubocop-rails
+  - rubocop-rspec
+
+Rails:
+  Enable: true
+
+# 自動生成等チェック不要なものを除外
+# Rubocop拡張のサジェストはOFFにする
+AllCops:
+  Exclude:
+    - 'bin/**/*'
+    - 'db/migrate/**/*'
+    - 'db/fixtures/**/*'
+    - 'db/schema.rb'
+    - 'config/**/*'
+    - 'vendor/**/*'
+    - 'node_modules/**/*'
+    - 'misc/**/*'
+    - 'storage/**/*'
+    - 'tmp/**/*'
+    - 'log/**/*'
+    - 'public/packs/**/*'
+    - '.git/**/*'
+    - 'scripts/tmp/**/*'
+  SuggestExtensions: false
+
+# 日本語のコメントを許可する
+Style/AsciiComments:
+  Enabled: false
+
+# クラス内のクラス定義形式は指定しない
+Style/ClassAndModuleChildren:
+  Enabled: false
+
+# ドキュメントの無い public class を許可する
+Style/Documentation:
+  Enabled: false
+
+# 空のメソッド定義の形式は指定しない
+Style/EmptyMethod:
+  Enabled: false
+
+# staging環境の設定を追加するために指定
+Rails/UnknownEnv:
+  Environments:
+    - production
+    - staging
+    - development
+    - test
+
+# Hashの形式は指定しない
+HashSyntax:
+  Enabled: false
+
+# メソッドの引数の文字数は1文字でも良いことにする
+Naming/MethodParameterName:
+  MinNameLength: 1
+
+Style/FrozenStringLiteralComment:
+  Exclude:
+    - 'Gemfile'
+    - 'Rakefile'
+    - 'config.ru'
+
+# メソッドの行数指定
+Metrics/MethodLength:
+  Max: 20
+
+# 1行の文字数指定
+Layout/LineLength:
+  Max: 130
