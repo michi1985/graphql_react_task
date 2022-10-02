@@ -5,8 +5,7 @@ services:
     volumes:
       - psgl_data:/var/lib/postgresql/data
     environment:
-      POSTGRES_USER: root
-      POSTGRES_PASSWORD: password
+      POSTGRES_PASSWORD: "${DB_PASSWORD}"
     ports:
       - 5433:5432
   web:
@@ -20,6 +19,8 @@ services:
       - db
     ports:
       - "3000:3000"
+    env_file:
+      - ./.env
     volumes:
       - .:/graphql_react_task
       - bundle:/usr/local/bundle
